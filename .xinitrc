@@ -9,9 +9,12 @@ dbus-update-activation-environment --systemd DISPLAY
 eval "$(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
 export SSH_AUTH_SOCK
 
-# Setup displays
-"$HOME/displays.sh"
+# contains exported variables such as QT scale factor
+# and has to be sourced before exec i3
+[ -f ~/.xprofile ] && . ~/.xprofile
 
 "$HOME/.local/share/tresorit/tresorit-cli" start
 
 exec i3
+
+autorandr --change
