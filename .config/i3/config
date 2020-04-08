@@ -266,7 +266,24 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# Nord
+# nord color scheme colors
+set $nord0   #2E3440
+set $nord1   #3B4252
+set $nord2   #434C5E
+set $nord3   #4C566A
+set $nord4   #D8DEE9
+set $nord5   #E5E9F0
+set $nord6   #ECEFF4
+set $nord7   #8FBCBB
+set $nord8   #88C0D0
+set $nord9   #81A1C1
+set $nord10  #5E81AC
+set $nord11  #BF616A
+set $nord12  #D08770
+set $nord13  #EBCB8B
+set $nord14  #A3BE8C
+set $nord15  #B48EAD
+
 set $base00 #2E3440
 set $base01 #3B4252
 set $base02 #434C5E
@@ -290,9 +307,10 @@ bar {
 	font pango:PragmataPro Mono 12
 	i3bar_command i3bar
 	status_command bumblebee-status \
-        -m nic disk:root cpu memory battery date time pasink pasource dnf \
+        -m nic disk:root cpu memory battery date time pasink pasource pacman \
         -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" \
         -t nord-powerline
+    # status_command i3status-rs ~/.config/i3/status.toml
 	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
