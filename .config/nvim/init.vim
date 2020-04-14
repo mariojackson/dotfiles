@@ -5,6 +5,8 @@
 " Load Plug and plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
@@ -15,7 +17,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'StanAngeloff/php.vim'
-Plug 'leafgarland/typescript-vim' 						"TSServer client 
 Plug 'ncm2/ncm2' 										"autocompletion (found keywords, path etc.)
 Plug 'phpactor/phpactor'
 Plug 'phpactor/ncm2-phpactor'
@@ -28,16 +29,18 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
 Plug 'jiangmiao/auto-pairs'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'joshdick/onedark.vim'
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'jparise/vim-graphql'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'leafgarland/typescript-vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/goyo.vim'
+Plug 'vimwiki/vimwiki'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -58,12 +61,13 @@ set tabstop=4 "Show one tab as 4 spaces
 set autoindent
 set smartindent
 set expandtab
+set t_Co=256
 
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_cursor_line_number_background = 1
 
-colorscheme nord
+colorscheme gruvbox-material
 let g:airline_powerline_fonts = 1
 
 " FZF settings
@@ -136,8 +140,13 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = '   '
 let g:OmniSharp_server_stdio = 1
 
 
-" ------------------- Goyo (Zen Mode) -------------------
+" --------------- Goyo (Zen Mode) ---------------
 let g:goyo_width=120
+
+
+" ------------------- VimWiki -------------------
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 
 " ------------------- COC -------------------
@@ -261,3 +270,4 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " Map format
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
