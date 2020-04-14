@@ -41,6 +41,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -138,6 +140,7 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = '   '
 
 " ------------------- CSharp -------------------
 let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_want_snippet=1
 
 
 " --------------- Goyo (Zen Mode) ---------------
