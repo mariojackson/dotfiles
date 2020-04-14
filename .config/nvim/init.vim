@@ -139,7 +139,9 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = '   '
 
 " ------------------- CSharp -------------------
 let g:OmniSharp_server_stdio = 1
-let g:OmniSharp_want_snippet=1
+
+" Highlight as much as possible
+let g:OmniSharp_highlight_types = 3
 
 
 " --------------- Goyo (Zen Mode) ---------------
@@ -272,5 +274,3 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " Map format
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-
-
