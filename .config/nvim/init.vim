@@ -35,6 +35,7 @@ Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'jparise/vim-graphql'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'sirver/UltiSnips'
 Plug 'sheerun/vim-polyglot'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'leafgarland/typescript-vim'
@@ -117,16 +118,16 @@ let g:go_def_mapping_enabled = 0 " disable vim-go :GoDef shortcut. This should b
 
 
 " ------------------- Deoplete -------------------
-set completeopt+=noinsert,menuone "Automatically chose the first autocomplete option on enter
-set completeopt-=preview
+"set completeopt+=noinsert,menuone "Automatically chose the first autocomplete option on enter
+"set completeopt-=preview
 "autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif "Autoclose deoplete popup
 let g:deoplete#enable_at_startup = 1
 
 
 " ------------------- UltiSnips -------------------
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsExpandTrigger='<c-l>'
+let g:UltiSnipsJumpForwardTrigger='<c-b>'
+let g:UltiSnipsJumpBackwardTrigger='<c-z>'
 
 
 " ------------------- Markdown -------------------
@@ -139,9 +140,13 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = '   '
 
 " ------------------- CSharp -------------------
 let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_want_snippet=1
+let g:omnicomplete_fetch_full_documentation = 1
 
 " Highlight as much as possible
 let g:OmniSharp_highlight_types = 3
+
+set completeopt=longest,menuone,preview
 
 
 " --------------- Goyo (Zen Mode) ---------------
@@ -169,15 +174,17 @@ set signcolumn=yes
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
