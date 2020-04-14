@@ -41,7 +41,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
@@ -273,4 +272,5 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " Map format
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
 
