@@ -163,7 +163,7 @@ set completeopt=longest,menuone,preview
 
 
 " --------------- Goyo (Zen Mode) ---------------
-let g:goyo_width=120
+let g:goyo_width=160
 
 
 " ------------------- VimWiki -------------------
