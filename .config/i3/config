@@ -154,16 +154,16 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 
+set $ws1 
 set $ws2 
 set $ws3 
 set $ws4 
 set $ws5 5
 set $ws6 6
 set $ws7 7
-set $ws8 8
+set $ws8 
 set $ws9 9
-set $ws10 Music
+set $ws10 
 
 # switch to workspace
 bindsym $mod+c workspace $ws1
@@ -284,33 +284,12 @@ set $nord13  #EBCB8B
 set $nord14  #A3BE8C
 set $nord15  #B48EAD
 
-set $base00 #2E3440
-set $base01 #3B4252
-set $base02 #434C5E
-set $base03 #4C566A
-set $base04 #D8DEE9
-set $base05 #E5E9F0
-set $base06 #ECEFF4
-set $base07 #8FBCBB
-set $base08 #88C0D0
-set $base09 #81A1C1
-set $base0A #5E81AC
-set $base0B #BF616A
-set $base0C #D08770
-set $base0D #EBCB8B
-set $base0E #A3BE8C
-set $base0F #B48EAD
-
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	font pango:PragmataPro Mono 12
 	i3bar_command i3bar
-	status_command bumblebee-status \
-        -m nic disk:root cpu memory battery date time pasink pasource pacman \
-        -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" \
-        -t nord-powerline
-    # status_command i3status-rs ~/.config/i3/status.toml
+    status_command i3status-rs ~/.config/i3/status.toml
 	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
@@ -322,16 +301,26 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-         background $base00
-        separator  $base01
-        statusline $base04
+        # background $base00
+        # separator  $base01
+        # statusline $base04
 
-        # State             Border  BG      Text
-        focused_workspace   $base09 $base09 $base00
-        active_workspace    $base05 $base03 $base00
-        inactive_workspace  $base03 $base01 $base05
-        urgent_workspace    $base08 $base08 $base00
-        binding_mode        $base00 $base0A $base00
+        # # State             Border  BG      Text
+        # focused_workspace   $base09 $base09 $base00
+        # active_workspace    $base05 $base03 $base00
+        # inactive_workspace  $base03 $base01 $base05
+        # urgent_workspace    $base08 $base08 $base00
+        # binding_mode        $base00 $base0A $base00
+
+        # Gruvbox
+   		background #3c3836
+		statusline #ebdbb2
+		separator  #666666
+		
+		focused_workspace  #458588 #458588 #ebdbb2
+		active_workspace   #83a598 #83a598 #ebdbb2
+		inactive_workspace #504945 #504945 #ebdbb2
+		urgent_workspace   #cc241d #cc241d #504945
     }
 }
 
@@ -428,6 +417,3 @@ exec --no-startup-id feh --bg-scale /home/mario/wallpaper.png
 
 bindsym $mod+Shift+p exec --no-startup-id "xclip -o | xargs mpv"
 for_window [class="mpv"] floating enable
-
-# i3 gaps rounded
-# border_radius 4
