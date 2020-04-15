@@ -43,6 +43,11 @@ block = "cpu"
 interval = 1
 
 [[block]]
+block = "bluetooth"
+mac = "FC:58:FA:81:90:AD"
+label = " E7"
+
+[[block]]
 block = "sound"
 driver = "pulseaudio"
 on_click = "pulseaudio-ctl mute"
