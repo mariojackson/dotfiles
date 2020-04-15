@@ -44,6 +44,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'honza/vim-snippets'
+Plug 'dense-analysis/ale'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
