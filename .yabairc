@@ -51,6 +51,6 @@ yabai -m rule --add app="^Code" space=9
 yabai -m rule --add app="^VSCodium" space=9
 yabai -m rule --add app="^GoLand" space=9
 
-yabai -m rule --add app="Preferences" layout float
+yabai -m rule --add app="Preferences" manage=off
 
 echo "yabai configuration loaded.."
