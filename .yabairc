@@ -43,7 +43,7 @@ yabai -m config window_gap                   5
 yabai -m rule --add app="^Slack" space=3
 
 yabai -m rule --add app="^Safari" space=5
-yabai -m rule --add app="^Firefox" space=5
+yabai -m rule --add app="^Mozilla Firefox" space=5
 
 yabai -m rule --add app="^kitty" space=10
 
