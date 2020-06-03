@@ -29,6 +29,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
 Plug 'jiangmiao/auto-pairs'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'file://~/.local/share/nvim/plugged/dracula-pro'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
@@ -71,7 +72,8 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_cursor_line_number_background = 1
 
-colorscheme gruvbox-material
+let g:dracula_colorterm = 0
+colorscheme dracula_pro
 let g:airline_powerline_fonts = 1
 
 " FZF settings
@@ -314,6 +316,9 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR><Paste>
+
+" Open CocExplorer
+:nmap <space>e :CocCommand explorer<CR>
 
 " Format file
 command! -nargs=0 Prettier :CocCommand prettier.formatFile

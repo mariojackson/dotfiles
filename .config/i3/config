@@ -287,10 +287,13 @@ set $nord15  #B48EAD
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	font pango:PragmataPro Mono 12
-	i3bar_command i3bar
-    status_command i3status-rs ~/.config/i3/status.toml
+    font pango:PragmataPro Mono 12
 	position top
+	tray_output none
+	status_command bumblebee-status -m nic disk:root cpu \
+		memory battery date time pasink pasource dnf \
+		-p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" \
+		-t dracula-powerline
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
@@ -301,26 +304,15 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        # background $base00
-        # separator  $base01
-        # statusline $base04
+        background #282A36
+        statusline #F8F8F2
+        separator  #44475A
 
-        # # State             Border  BG      Text
-        # focused_workspace   $base09 $base09 $base00
-        # active_workspace    $base05 $base03 $base00
-        # inactive_workspace  $base03 $base01 $base05
-        # urgent_workspace    $base08 $base08 $base00
-        # binding_mode        $base00 $base0A $base00
-
-        # Gruvbox
-   		background #3c3836
-		statusline #ebdbb2
-		separator  #666666
-		
-		focused_workspace  #458588 #458588 #ebdbb2
-		active_workspace   #83a598 #83a598 #ebdbb2
-		inactive_workspace #504945 #504945 #ebdbb2
-		urgent_workspace   #cc241d #cc241d #504945
+        focused_workspace  #44475A #44475A #F8F8F2
+        active_workspace   #282A36 #44475A #F8F8F2
+        inactive_workspace #282A36 #282A36 #BFBFBF
+        urgent_workspace   #FF5555 #FF5555 #F8F8F2
+        binding_mode       #FF5555 #FF5555 #F8F8F2
     }
 }
 
@@ -328,15 +320,13 @@ bar {
 bindsym $mod+p bar mode toggle
 
 # Theme colors
-# class                   border  backgr. text    indic.   child_border
-# Basic color configuration using the Base16 variables for windows and borders.
-# Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base05 $base0D $base00 $base0D $base0C
-client.focused_inactive $base01 $base01 $base05 $base03 $base01
-client.unfocused        $base01 $base00 $base05 $base01 $base01
-client.urgent           $base08 $base08 $base00 $base08 $base08
-client.placeholder      $base00 $base00 $base05 $base00 $base00
-client.background       $base07
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.background       #F8F8F2
 
 #############################
 ### settings for i3-gaps: ###
