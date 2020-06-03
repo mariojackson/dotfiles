@@ -29,6 +29,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go'
 Plug 'jiangmiao/auto-pairs'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'file://'.expand('~/.local/share/nvim/plugged/dracula-pro') 
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
@@ -71,7 +72,9 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_cursor_line_number_background = 1
 
-colorscheme nord
+let g:dracula_colorterm = 0
+colorscheme dracula_pro
+
 let g:airline_powerline_fonts = 1
 
 " FZF settings
