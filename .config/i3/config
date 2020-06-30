@@ -56,7 +56,7 @@ bindsym XF86MonBrightnessDown exec light -U 5 && notify-send 'brightness down' #
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 for_window [instance="scratch-terminal"] floating enable, move to scratchpad
 exec --no-startup-id kitty -name scratch-terminal 
 bindsym $mod+Shift+Return [instance="scratch-terminal"] scratchpad show

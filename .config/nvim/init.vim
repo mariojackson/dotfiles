@@ -20,6 +20,7 @@ Plug 'StanAngeloff/php.vim'
 Plug 'ncm2/ncm2' 										"autocompletion (found keywords, path etc.)
 Plug 'phpactor/phpactor'
 Plug 'phpactor/ncm2-phpactor'
+Plug 'tpope/vim-rails'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'neomake/neomake'
@@ -33,6 +34,7 @@ Plug 'file://~/.local/share/nvim/plugged/dracula-pro'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/sonokai'
+Plug 'phanviet/vim-monokai-pro'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'jparise/vim-graphql'
@@ -72,8 +74,7 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_cursor_line_number_background = 1
 
-let g:dracula_colorterm = 0
-colorscheme dracula_pro
+colorscheme monokai_pro
 let g:airline_powerline_fonts = 1
 
 " FZF settings
