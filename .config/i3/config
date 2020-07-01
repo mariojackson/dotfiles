@@ -56,7 +56,7 @@ bindsym XF86MonBrightnessDown exec light -U 5 && notify-send 'brightness down' #
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 for_window [instance="scratch-terminal"] floating enable, move to scratchpad
 exec --no-startup-id kitty -name scratch-terminal 
 bindsym $mod+Shift+Return [instance="scratch-terminal"] scratchpad show
@@ -70,12 +70,12 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec rofi -theme base16-nord -show drun -font "Jetbrains Mono 16" -show-icons
+bindsym $mod+d exec rofi -show drun -show-icons
 
 # focus_follows_mouse no
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window none
+new_window 1pixel
 new_float normal
 
 # Hide borders
