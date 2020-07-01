@@ -175,6 +175,8 @@ let g:goyo_width=160
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
+" ------------------- Polyglot -------------------
+let g:polyglot_disabled = ['yaml']
 
 " ------------------- COC -------------------
 " TextEdit might fail if hidden is not set.
