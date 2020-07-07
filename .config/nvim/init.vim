@@ -75,7 +75,9 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_cursor_line_number_background = 1
 
-colorscheme dracula
+let g:sonokai_style = 'andromeda'
+
+colorscheme nord
 let g:airline_powerline_fonts = 1
 
 " FZF settings
