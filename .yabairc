@@ -1,8 +1,11 @@
 #!/usr/bin/env sh
 
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 # global settings
-yabai -m config mouse_follows_focus          off
-yabai -m config focus_follows_mouse          off
+yabai -m config mouse_follows_focus          on
+yabai -m config focus_follows_mouse          on
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
 yabai -m config window_opacity               off
@@ -31,11 +34,11 @@ yabai -m config window_gap                   5
 
 yabai -m rule --add app="^Slack" space=3
 
-yabai -m rule --add app="^Safari" space=10
-yabai -m rule --add app="^Mozilla Firefox" space=10
+yabai -m rule --add app="^Safari" space=7
+yabai -m rule --add app="^Mozilla Firefox" space=7
 
-yabai -m rule --add app="^kitty" space=6
-yabai -m rule --add app="^Alacritty" space=6
+yabai -m rule --add app="^kitty" space=10
+yabai -m rule --add app="^Alacritty" space=10
 
 yabai -m rule --add app="^Code" space=5
 yabai -m rule --add app="^VSCodium" space=5
@@ -43,6 +46,7 @@ yabai -m rule --add app="^GoLand" space=5
 yabai -m rule --add app="^WebStorm" space=5
 yabai -m rule --add app="^PhpStorm" space=5
 
-yabai -m rule --add title='Preferences$' manage=off topmost=on
+yabai -m rule --add title='Preferences$' manage=off
+yabai -m rule --add title='^Commit Changes$' manage=off
 
 echo "yabai configuration loaded.."
